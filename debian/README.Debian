@@ -1,0 +1,20 @@
+pgpool-II for Debian
+--------------------
+
+General usage information can be found in the files pgpool-{en,ja}.html
+in this directory.
+
+Package-specific notes:
+
+- The default port number for pgpool on Debian is 5433.  You need to
+  adjust your applications accordingly, or switch PostgreSQL to a
+  different port and set pgpool to 5432, to get truly transparent
+  access to pgpool.
+
+- The default directory for the socket file and the PID file is
+  /var/run/postgresql, as is known from the postgresql package.
+
+- Logging goes to syslog.  See /etc/default/pgpool and /etc/init.d/pgpool
+  for tweaking possibilities.
+
+ -- Peter Eisentraut <petere@debian.org>, 1 Sep 2005

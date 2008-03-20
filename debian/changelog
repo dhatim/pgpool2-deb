@@ -1,0 +1,31 @@
+pgpool2 (1.3-1) unstable; urgency=low
+
+  * New upstream release
+
+ -- Peter Eisentraut <petere@debian.org>  Mon, 19 Nov 2007 10:48:32 +0100
+
+pgpool2 (1.2.1-1) unstable; urgency=low
+
+  * New upstream release
+  * Added Homepage control field
+  * Install pool_hba.conf by default
+
+ -- Peter Eisentraut <petere@debian.org>  Sat, 06 Oct 2007 12:34:20 +0200
+
+pgpool2 (1.2-1) unstable; urgency=low
+
+  * New upstream release
+
+ -- Peter Eisentraut <petere@debian.org>  Fri, 10 Aug 2007 12:03:41 +0200
+
+pgpool2 (1.1.1-1) unstable; urgency=low
+
+  * New upstream release
+
+ -- Peter Eisentraut <petere@debian.org>  Fri, 15 Jun 2007 21:45:16 +0200
+
+pgpool2 (1.0.2-1) unstable; urgency=low
+
+  * Initial release (closes: #390515)
+
+ -- Peter Eisentraut <petere@debian.org>  Wed, 21 Mar 2007 13:18:33 +0100

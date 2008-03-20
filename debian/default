@@ -1,0 +1,8 @@
+# Defaults for pgpool initscript
+# sourced by /etc/init.d/pgpool
+
+# syslog facility for pgpool; see logger(1)
+PGPOOL_SYSLOG_FACILITY=local0
+
+# set to "yes" if you want to enable debugging messages to the log
+PGPOOL_LOG_DEBUG=no

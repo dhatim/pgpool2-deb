@@ -1,0 +1,18 @@
+#!/usr/bin/make -f
+
+include /usr/share/cdbs/1/rules/debhelper.mk
+include /usr/share/cdbs/1/class/autotools.mk
+include /usr/share/cdbs/1/rules/simple-patchsys.mk
+
+DEB_CONFIGURE_EXTRA_FLAGS = --bindir=/usr/sbin --disable-rpath
+DEB_INSTALL_DOCS_ALL =
+DEB_UPDATE_RCD_PARAMS = defaults 21 19
+
+binary-post-install/pgpool2::
+	mv $(DEB_DESTDIR)/etc/pgpool.conf.sample $(DEB_DESTDIR)/etc/pgpool.conf
+	mv $(DEB_DESTDIR)/etc/pcp.conf.sample $(DEB_DESTDIR)/etc/pcp.conf
+	mv $(DEB_DESTDIR)/etc/pool_hba.conf.sample $(DEB_DESTDIR)/etc/pool_hba.conf
+
+# unnecessary development files
+	rm $(addprefix $(DEB_DESTDIR)/usr/lib/libpcp.,a la so)
+	rm -r $(DEB_DESTDIR)/usr/include/

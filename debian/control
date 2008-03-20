@@ -1,0 +1,24 @@
+Source: pgpool2
+Section: misc
+Priority: optional
+Maintainer: Peter Eisentraut <petere@debian.org>
+Build-Depends: cdbs (>= 0.4.38), debhelper (>= 5), libpq-dev
+Standards-Version: 3.7.2
+Homepage: http://pgpool.projects.postgresql.org/
+
+Package: pgpool2
+Architecture: any
+Depends: lsb-base (>= 3.0-3), postgresql-common (>= 26), ${misc:Depends}, ${shlibs:Depends}
+Enhances: libpq4, libpq5, postgresql
+Conflicts: pgpool
+Replaces: pgpool
+Description: connection pool server and replication proxy for PostgreSQL
+ pgpool is a connection pool server for PostgreSQL, running between
+ PostgreSQL's client and server.  Any PostgreSQL client can connect to
+ pgpool as if it's a real PostgreSQL server; pgpool caches the
+ connection to the PostgreSQL server to reduce the overhead involved in
+ establishing the connection to it.  pgpool-II can also be used to
+ execute queries simultaneously on several servers, that is, "parallel
+ query" processing.  Finally, pgpool can be used for fail over purposes.
+ If the first server goes down, pgpool will automatically switch to the
+ secondary server. 
