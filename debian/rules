@@ -8,6 +8,8 @@ DEB_CONFIGURE_EXTRA_FLAGS = --bindir=/usr/sbin --disable-rpath
 DEB_INSTALL_DOCS_ALL =
 DEB_UPDATE_RCD_PARAMS = defaults 21 19
 
+LDFLAGS += -Wl,--as-needed
+
 binary-post-install/pgpool2::
 	mv $(DEB_DESTDIR)/etc/pgpool.conf.sample $(DEB_DESTDIR)/etc/pgpool.conf
 	mv $(DEB_DESTDIR)/etc/pcp.conf.sample $(DEB_DESTDIR)/etc/pcp.conf
