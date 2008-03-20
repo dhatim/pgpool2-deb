@@ -3,7 +3,7 @@ Section: misc
 Priority: optional
 Maintainer: Peter Eisentraut <petere@debian.org>
 Build-Depends: cdbs (>= 0.4.38), debhelper (>= 5), libpq-dev
-Standards-Version: 3.7.2
+Standards-Version: 3.7.3
 Homepage: http://pgpool.projects.postgresql.org/
 
 Package: pgpool2
