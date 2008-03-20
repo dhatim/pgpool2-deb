@@ -5,6 +5,8 @@ Maintainer: Peter Eisentraut <petere@debian.org>
 Build-Depends: cdbs (>= 0.4.38), debhelper (>= 5), libpq-dev
 Standards-Version: 3.7.3
 Homepage: http://pgpool.projects.postgresql.org/
+Vcs-Svn: svn://svn.debian.org/pkg-postgresql/trunk/pgpool2/
+Vcs-Browser: http://svn.debian.org/wsvn/pkg-postgresql/trunk/pgpool2/
 
 Package: pgpool2
 Architecture: any
