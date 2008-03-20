@@ -2,12 +2,11 @@
 
 ### BEGIN INIT INFO
 # Provides:          pgpool2
-# Required-Start:    $syslog
-# Required-Stop:     $syslog
-# Should-Start:      $local_fs postgresql
-# Should-Stop:       $local_fs
+# Required-Start:    $remote_fs $syslog
+# Required-Stop:     $remote_fs $syslog
+# Should-Start:      postgresql
 # Default-Start:     2 3 4 5
-# Default-Stop:      S 0 1 6
+# Default-Stop:      0 1 6
 # Short-Description: start pgpool-II
 # Description: pgpool-II is a connection pool server and replication
 #              proxy for PostgreSQL.
