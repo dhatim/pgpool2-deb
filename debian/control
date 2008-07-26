@@ -1,9 +1,9 @@
 Source: pgpool2
 Section: misc
 Priority: optional
-Maintainer: Peter Eisentraut <petere@debian.org>
+Maintainer: Andreas Putzo <andreas@putzo.net>
 Build-Depends: cdbs (>= 0.4.38), debhelper (>= 5), libpq-dev
-Standards-Version: 3.7.3
+Standards-Version: 3.8.0
 Homepage: http://pgpool.projects.postgresql.org/
 Vcs-Svn: svn://svn.debian.org/pkg-postgresql/trunk/pgpool2/
 Vcs-Browser: http://svn.debian.org/wsvn/pkg-postgresql/trunk/pgpool2/
@@ -23,4 +23,4 @@ Description: connection pool server and replication proxy for PostgreSQL
  execute queries simultaneously on several servers, that is, "parallel
  query" processing.  Finally, pgpool can be used for fail over purposes.
  If the first server goes down, pgpool will automatically switch to the
- secondary server. 
+ secondary server.
