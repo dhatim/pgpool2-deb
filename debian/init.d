@@ -20,8 +20,8 @@ PIDFILE=/var/run/postgresql/pgpool.pid
 test -x $DAEMON || exit 5
 
 # Include pgpool defaults if available
-if [ -f /etc/default/pgpool ] ; then
-	. /etc/default/pgpool
+if [ -f /etc/default/pgpool2 ] ; then
+	. /etc/default/pgpool2
 fi
 
 OPTS=""
