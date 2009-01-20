@@ -1,0 +1,12 @@
+diff -Nur -x '*.orig' -x '*~' pgpool2-2.1/pgpool.8.in pgpool2-2.1.new/pgpool.8.in
+--- pgpool2-2.1/pgpool.8.in	2008-03-31 08:27:40.000000000 +0000
++++ pgpool2-2.1.new/pgpool.8.in	2009-01-20 21:24:17.000000000 +0000
+@@ -42,7 +42,7 @@
+ Switch between master
+ and secondary servers.  If only one server is configured, this will only
+ restart the child processes.
+-..
++.
+ .SH OPTIONS
+ .TP
+ \fB\-d\fR
