@@ -2,7 +2,7 @@ pgpool-II for Debian
 --------------------
 
 General usage information can be found in the files pgpool-{en,ja}.html
-in this directory.
+and tutorial-{en,ja}.html in this directory.
 
 Package-specific notes:
 
