@@ -17,4 +17,8 @@ Package-specific notes:
 - Logging goes to syslog.  See /etc/default/pgpool and /etc/init.d/pgpool
   for tweaking possibilities.
 
- -- Peter Eisentraut <petere@debian.org>, 1 Sep 2005
+- The default directory for configuration files has been changed
+  to /etc/pgpool2/ since version 2.1-1.
+
+ -- Peter Eisentraut <petere@debian.org>, 1 Sep 2005,
+    Andreas Putzo <andreas@putzo.net>, 20 Jan 2009
