@@ -21,7 +21,7 @@ prep_mv_conffile() {
 
     if [ -e "$CONFFILE" ]; then
         md5sum="`md5sum \"$CONFFILE\" | sed -e \"s/ .*//\"`"
-        old_md5sum="`sed -n -e \"/^Conffiles:/,/^[^ ]/{\\\\' $CONFFILE'{s/.* //;p}}\" /var/lib/dpkg/status`"
+        old_md5sum=`dpkg-query -W -f'${Conffiles}' pgpool2 |grep $CONFFILE |sed 's/\(^\s.*\s\)\(.*\)/\2/'`
         if [ "$md5sum" = "$old_md5sum" ]; then
             rm -f "$CONFFILE"
         fi
