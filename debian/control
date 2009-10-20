@@ -1,7 +1,7 @@
 Source: pgpool2
 Section: misc
 Priority: optional
-Maintainer: Andreas Putzo <andreas@putzo.net>
+Maintainer: Rodolphe Quiédeville <rodolphe@quiedeville.org>
 Build-Depends: cdbs (>= 0.4.38), debhelper (>= 5), libpq-dev
 Standards-Version: 3.8.0
 Homepage: http://pgpool.projects.postgresql.org/

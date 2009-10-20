@@ -1,7 +1,13 @@
-pgpool2 (2.1-1) experimental; urgency=low
+pgpool2 (2.2.5-1) experimental; urgency=low
 
+  [ Rodolphe Quiédeville ]
+	
   * New upstream release. (Closes: #464345)
   * New Maintainer. (Closes: #471826, #491893)
+  * Move pid file to /var/run/postgresql
+
+  [ Andreas Putzo ]
+  
   * Bumped policy to 3.8.0, without changes.
   * Update init script to source correct default/pgpool2. (Closes: #497952)
   * Move conffiles to /etc/pgpool2/ in preinst/postinst.
@@ -10,7 +16,7 @@ pgpool2 (2.1-1) experimental; urgency=low
   * Mention license of parser/gram.c in debian/copyright.
   * Add manpage.patch to fix a typo that caused a lintian warning.
 
- -- Andreas Putzo <andreas@putzo.net>  Tue, 20 Jan 2009 21:24:32 +0000
+ -- Rodolphe Quiédeville <rodolphe@quiedeville.org>  Mon, 12 Oct 2009 14:37:47 +0200
 
 pgpool2 (1.3-2) unstable; urgency=low
 
