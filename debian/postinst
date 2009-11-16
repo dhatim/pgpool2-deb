@@ -41,7 +41,7 @@ case "$1" in
         fi
 	LPORT=`perl -e 'use lib "/usr/share/postgresql-common";use PgCommon;printf "%s\n", next_free_port;'`
 	if [ -f "/etc/pgpool2/pgpool.conf" ]; then
-	    sed -e "s/^port\s*=.*$/port = $LPORT/" "/etc/pgpool2/pgpool.conf"
+	    sed -i -e "s/^port\s*=.*$/port = $LPORT/" "/etc/pgpool2/pgpool.conf"
 	fi
     ;;
 
