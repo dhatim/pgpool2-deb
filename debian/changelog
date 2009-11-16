@@ -1,3 +1,9 @@
+pgpool2 (2.2.5-2) experimental; urgency=low
+
+  * Auto-configure listen port in postinst
+
+ -- Rodolphe Quiédeville <rodolphe@quiedeville.org>  Mon, 16 Nov 2009 18:23:56 +0100
+
 pgpool2 (2.2.5-1) experimental; urgency=low
 
   [ Rodolphe Quiédeville ]
