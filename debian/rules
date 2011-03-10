@@ -1,20 +1,28 @@
 #!/usr/bin/make -f
 
-include /usr/share/cdbs/1/rules/debhelper.mk
-include /usr/share/cdbs/1/class/autotools.mk
-include /usr/share/cdbs/1/rules/simple-patchsys.mk
-
-DEB_CONFIGURE_EXTRA_FLAGS = --sysconfdir=/etc/pgpool2 --bindir=/usr/sbin --disable-rpath --libdir=/usr/lib/pgpool2
-DEB_INSTALL_DOCS_ALL =
-DEB_UPDATE_RCD_PARAMS = defaults 21 19
-
 LDFLAGS += -Wl,--as-needed
 
-binary-post-install/pgpool2::
-	mv $(DEB_DESTDIR)/etc/pgpool2/pgpool.conf.sample $(DEB_DESTDIR)/etc/pgpool2/pgpool.conf
-	mv $(DEB_DESTDIR)/etc/pgpool2/pcp.conf.sample $(DEB_DESTDIR)/etc/pgpool2/pcp.conf
-	mv $(DEB_DESTDIR)/etc/pgpool2/pool_hba.conf.sample $(DEB_DESTDIR)/etc/pgpool2/pool_hba.conf
+D=debian/pgpool2
 
-# unnecessary development files
-	rm $(addprefix $(DEB_DESTDIR)/usr/lib/pgpool2/libpcp.,a la so)
-	rm -r $(DEB_DESTDIR)/usr/include/
+override_dh_auto_configure:
+	./configure --prefix=/usr --sysconfdir=/etc/pgpool2 --bindir=/usr/sbin --disable-rpath --libdir=/usr/lib/pgpool2
+
+override_dh_install:
+	dh_install
+	rm -f $(addprefix $D/usr/lib/pgpool2/libpcp.,a la so)
+	rm -r $D/usr/include/
+	rm $D/usr/share/pgpool-II/pgpool.pam
+	mv $D/usr/share/pgpool-II $D/usr/share/pgpool2
+
+override_dh_installexamples:
+	dh_installexamples
+	mv $D/etc/pgpool2/pgpool.conf.sample   $D/etc/pgpool2/pgpool.conf
+	mv $D/etc/pgpool2/pcp.conf.sample      $D/etc/pgpool2/pcp.conf
+	mv $D/etc/pgpool2/pool_hba.conf.sample $D/etc/pgpool2/pool_hba.conf
+	mkdir -p $D/usr/share/doc/pgpool2/examples
+	mv $D/etc/pgpool2/*sample* $D/usr/share/doc/pgpool2/examples
+
+#DEB_UPDATE_RCD_PARAMS = defaults 21 19
+
+%:
+	dh $@ --with quilt

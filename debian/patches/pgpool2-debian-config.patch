@@ -1,6 +1,5 @@
-diff -Nur -x 'debian*' -x '*~' pgpool-II-2.2.5/pgpool.conf.sample pgpool-II-2.2.5.new/pgpool.conf.sample
---- pgpool-II-2.2.5/pgpool.conf.sample	2009-02-15 06:26:28.000000000 +0100
-+++ pgpool-II-2.2.5.new/pgpool.conf.sample	2009-10-12 15:05:05.000000000 +0200
+--- a/pgpool.conf.sample
++++ b/pgpool.conf.sample
 @@ -7,21 +7,21 @@
  listen_addresses = 'localhost'
  
@@ -25,14 +24,14 @@ diff -Nur -x 'debian*' -x '*~' pgpool-II-2.2.5/pgpool.conf.sample pgpool-II-2.2.
 -backend_socket_dir = '/tmp'
 +backend_socket_dir = '/var/run/postgresql'
  
- # pgpool communication manager timeout. 0 means no timeout, but strongly not recommended!
+ # pgpool communication manager timeout. 0 means no timeout. This parameter is ignored now.
  pcp_timeout = 10
-@@ -54,10 +54,10 @@
+@@ -54,10 +54,10 @@ client_idle_limit = 0
  authentication_timeout = 60
  
  # Logging directory
 -logdir = '/tmp'
-+logdir = '/var/run/postgresql'
++logdir = '/var/log/postgresql'
  
  # pid file name
 -pid_file_name = '/var/run/pgpool/pgpool.pid'
@@ -40,15 +39,14 @@ diff -Nur -x 'debian*' -x '*~' pgpool-II-2.2.5/pgpool.conf.sample pgpool-II-2.2.
  
  # Replication mode
  replication_mode = false
-diff -Nur -x 'debian*' -x '*~' pgpool-II-2.2.5/pool.h pgpool-II-2.2.5.new/pool.h
---- pgpool-II-2.2.5/pool.h	2009-09-06 05:52:12.000000000 +0200
-+++ pgpool-II-2.2.5.new/pool.h	2009-10-12 15:04:28.000000000 +0200
-@@ -50,10 +50,10 @@
+--- a/pool.h
++++ b/pool.h
+@@ -58,10 +58,10 @@
  #define HBA_CONF_FILE_NAME "pool_hba.conf"
  
  /* pid file directory */
 -#define DEFAULT_LOGDIR "/tmp"
-+#define DEFAULT_LOGDIR "/var/run/postgresql"
++#define DEFAULT_LOGDIR "/var/log/postgresql"
  
  /* Unix domain socket directory */
 -#define DEFAULT_SOCKET_DIR "/tmp"
@@ -56,3 +54,126 @@ diff -Nur -x 'debian*' -x '*~' pgpool-II-2.2.5/pool.h pgpool-II-2.2.5.new/pool.h
  
  /* pid file name */
  #define DEFAULT_PID_FILE_NAME "/var/run/pgpool/pgpool.pid"
+--- a/pgpool.conf.sample-master-slave
++++ b/pgpool.conf.sample-master-slave
+@@ -7,21 +7,21 @@
+ listen_addresses = 'localhost'
+ 
+ # Port number for pgpool
+-port = 9999
++port = 5433
+ 
+ # Port number for pgpool communication manager
+ pcp_port = 9898
+ 
+ # Unix domain socket path.  (The Debian package defaults to
+ # /var/run/postgresql.)
+-socket_dir = '/tmp'
++socket_dir = '/var/run/postgresql'
+ 
+ # Unix domain socket path for pgpool communication manager.
+ # (Debian package defaults to /var/run/postgresql)
+-pcp_socket_dir = '/tmp'
++pcp_socket_dir = '/var/run/postgresql'
+ 
+ # Unix domain socket path for the backend. Debian package defaults to /var/run/postgresql!
+-backend_socket_dir = '/tmp'
++backend_socket_dir = '/var/run/postgresql'
+ 
+ # pgpool communication manager timeout. 0 means no timeout. This parameter is ignored now.
+ pcp_timeout = 10
+@@ -54,10 +54,10 @@ client_idle_limit = 0
+ authentication_timeout = 60
+ 
+ # Logging directory
+-logdir = '/tmp'
++logdir = '/var/log/postgresql'
+ 
+ # pid file name
+-pid_file_name = '/var/run/pgpool/pgpool.pid'
++pid_file_name = '/var/run/postgresql/pgpool.pid'
+ 
+ # Replication mode
+ replication_mode = false
+--- a/pgpool.conf.sample-replication
++++ b/pgpool.conf.sample-replication
+@@ -7,21 +7,21 @@
+ listen_addresses = 'localhost'
+ 
+ # Port number for pgpool
+-port = 9999
++port = 5433
+ 
+ # Port number for pgpool communication manager
+ pcp_port = 9898
+ 
+ # Unix domain socket path.  (The Debian package defaults to
+ # /var/run/postgresql.)
+-socket_dir = '/tmp'
++socket_dir = '/var/run/postgresql'
+ 
+ # Unix domain socket path for pgpool communication manager.
+ # (Debian package defaults to /var/run/postgresql)
+-pcp_socket_dir = '/tmp'
++pcp_socket_dir = '/var/run/postgresql'
+ 
+ # Unix domain socket path for the backend. Debian package defaults to /var/run/postgresql!
+-backend_socket_dir = '/tmp'
++backend_socket_dir = '/var/run/postgresql'
+ 
+ # pgpool communication manager timeout. 0 means no timeout. This parameter is ignored now.
+ pcp_timeout = 10
+@@ -54,10 +54,10 @@ client_idle_limit = 0
+ authentication_timeout = 60
+ 
+ # Logging directory
+-logdir = '/tmp'
++logdir = '/var/log/postgresql'
+ 
+ # pid file name
+-pid_file_name = '/var/run/pgpool/pgpool.pid'
++pid_file_name = '/var/run/postgresql/pgpool.pid'
+ 
+ # Replication mode
+ replication_mode = true
+--- a/pgpool.conf.sample-stream
++++ b/pgpool.conf.sample-stream
+@@ -7,21 +7,21 @@
+ listen_addresses = 'localhost'
+ 
+ # Port number for pgpool
+-port = 9999
++port = 5433
+ 
+ # Port number for pgpool communication manager
+ pcp_port = 9898
+ 
+ # Unix domain socket path.  (The Debian package defaults to
+ # /var/run/postgresql.)
+-socket_dir = '/tmp'
++socket_dir = '/var/run/postgresql'
+ 
+ # Unix domain socket path for pgpool communication manager.
+ # (Debian package defaults to /var/run/postgresql)
+-pcp_socket_dir = '/tmp'
++pcp_socket_dir = '/var/run/postgresql'
+ 
+ # Unix domain socket path for the backend. Debian package defaults to /var/run/postgresql!
+-backend_socket_dir = '/tmp'
++backend_socket_dir = '/var/run/postgresql'
+ 
+ # pgpool communication manager timeout. 0 means no timeout. This parameter is ignored now.
+ pcp_timeout = 10
+@@ -54,10 +54,10 @@ client_idle_limit = 0
+ authentication_timeout = 60
+ 
+ # Logging directory
+-logdir = '/tmp'
++logdir = '/var/log/postgresql'
+ 
+ # pid file name
+-pid_file_name = '/var/run/pgpool/pgpool.pid'
++pid_file_name = '/var/run/postgresql/pgpool.pid'
+ 
+ # Replication mode
+ replication_mode = false
