@@ -22,7 +22,5 @@ override_dh_installexamples:
 	mkdir -p $D/usr/share/doc/pgpool2/examples
 	mv $D/etc/pgpool2/*sample* $D/usr/share/doc/pgpool2/examples
 
-#DEB_UPDATE_RCD_PARAMS = defaults 21 19
-
 %:
 	dh $@ --with quilt
