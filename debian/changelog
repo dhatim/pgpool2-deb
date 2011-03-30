@@ -5,8 +5,8 @@ pgpool2 (3.0.3-1) UNRELEASED; urgency=low
     + Builds correctly. Closes: #556059, #607841.
   * Convert to use quilt and dh 7.
   * Move example files to /usr/share/doc.
-  * Also patch example config files, thanks Andre Felipe Machado.
-    Closes: #590570.
+  * Patch example config files, thanks Andre Felipe Machado.
+    Also remove manpage page. Closes: #590570.
 
  -- Christoph Berg <myon@debian.org>  Thu, 10 Mar 2011 15:01:12 +0100
 
