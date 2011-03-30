@@ -1,4 +1,4 @@
-pgpool2 (3.0.3-1) UNRELEASED; urgency=low
+pgpool2 (3.0.3-1) experimental; urgency=low
 
   * New maintainer, thanks Rodolphe for the permission to take over.
   * New upstream version.
@@ -8,7 +8,7 @@ pgpool2 (3.0.3-1) UNRELEASED; urgency=low
   * Patch example config files, thanks Andre Felipe Machado.
     Also remove manpage page. Closes: #590570.
 
- -- Christoph Berg <myon@debian.org>  Thu, 10 Mar 2011 15:01:12 +0100
+ -- Christoph Berg <myon@debian.org>  Wed, 30 Mar 2011 17:23:22 +0200
 
 pgpool2 (2.2.5-2) experimental; urgency=low
 
