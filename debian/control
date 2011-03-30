@@ -24,3 +24,5 @@ Description: connection pool server and replication proxy for PostgreSQL
  query" processing.  Finally, pgpool can be used for fail over purposes.
  If the first server goes down, pgpool will automatically switch to the
  secondary server.
+ .
+ This is version 3 of pgpool-II, the second generation of pgpool.
