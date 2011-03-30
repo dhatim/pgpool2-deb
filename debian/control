@@ -10,19 +10,26 @@ Vcs-Browser: http://svn.debian.org/wsvn/pkg-postgresql/trunk/pgpool2/
 
 Package: pgpool2
 Architecture: any
-Depends: lsb-base (>= 3.0-3), postgresql-common (>= 26), ${misc:Depends}, ${shlibs:Depends}
-Enhances: libpq4, libpq5, postgresql
+Depends: lsb-base (>= 3.0-3), postgresql-common (>= 26),
+ ${misc:Depends}, ${shlibs:Depends}
+Enhances: postgresql
 Conflicts: pgpool
 Replaces: pgpool
 Description: connection pool server and replication proxy for PostgreSQL
- pgpool is a connection pool server for PostgreSQL, running between
- PostgreSQL's client and server.  Any PostgreSQL client can connect to
- pgpool as if it's a real PostgreSQL server; pgpool caches the
- connection to the PostgreSQL server to reduce the overhead involved in
- establishing the connection to it.  pgpool-II can also be used to
- execute queries simultaneously on several servers, that is, "parallel
- query" processing.  Finally, pgpool can be used for fail over purposes.
- If the first server goes down, pgpool will automatically switch to the
- secondary server.
+ pgpool-II is a middleware that works between PostgreSQL servers and a
+ PostgreSQL database client. It provides the following features:
+ .
+  * Connection Pooling
+  * Replication
+  * Load Balance
+  * Limiting Exceeding Connections
+  * Parallel Query
+ .
+ pgpool-II talks PostgreSQL's backend and frontend protocol, and relays a
+ connection between them. Therefore, a database application (frontend) thinks
+ that pgpool-II is the actual PostgreSQL server, and the server (backend) sees
+ pgpool-II as one of its clients. Because pgpool-II is transparent to both the
+ server and the client, an existing database application can be used with
+ pgpool-II almost without a change to its sources.
  .
  This is version 3 of pgpool-II, the second generation of pgpool.
