@@ -1,3 +1,9 @@
+pgpool2 (3.0.3-2) unstable; urgency=low
+
+  * Upload to unstable.
+
+ -- Christoph Berg <myon@debian.org>  Thu, 31 Mar 2011 11:53:04 +0200
+
 pgpool2 (3.0.3-1) experimental; urgency=low
 
   * New maintainer, thanks Rodolphe for the permission to take over.
