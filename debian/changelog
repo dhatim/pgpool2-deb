@@ -1,3 +1,10 @@
+pgpool2 (3.0.4-1) unstable; urgency=low
+
+  * New upstream release
+  * Use format 3.0 (quilt).
+
+ -- Christoph Berg <myon@debian.org>  Fri, 10 Jun 2011 10:18:29 +0200
+
 pgpool2 (3.0.3-2) unstable; urgency=low
 
   * Upload to unstable.
