@@ -1,11 +1,27 @@
 #!/usr/bin/make -f
 
+SRCDIR = .
+include /usr/share/postgresql-common/pgxs_debian_control.mk
+clean: debian/control
+.PHONY: debian/control
+
 LDFLAGS += -Wl,--as-needed
 
 D=debian/pgpool2
 
 override_dh_auto_configure:
 	./configure --prefix=/usr --sysconfdir=/etc/pgpool2 --bindir=/usr/sbin --disable-rpath --libdir=/usr/lib/pgpool2
+
+override_dh_auto_build:
+	dh_auto_build
+	set -ex ; \
+	for v in `pg_buildext supported-versions .` ; do \
+		echo "# $$v ##################################################################" ; \
+		PG_CONFIG=/usr/lib/postgresql/$$v/bin/pg_config ; \
+		$(MAKE) -C sql clean PG_CONFIG=$$PG_CONFIG ; \
+		$(MAKE) -C sql PG_CONFIG=$$PG_CONFIG ; \
+		$(MAKE) -C sql install DESTDIR=$(CURDIR)/debian/postgresql-$$v-pgpool2 PG_CONFIG=$$PG_CONFIG ; \
+	done
 
 override_dh_install:
 	dh_install

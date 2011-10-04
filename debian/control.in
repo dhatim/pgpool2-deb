@@ -1,0 +1,48 @@
+Source: pgpool2
+Section: database
+Priority: optional
+Maintainer: Christoph Berg <myon@debian.org>
+Build-Depends: debhelper (>= 7.0.50~), libpq-dev
+Standards-Version: 3.9.2
+Homepage: http://pgpool.projects.postgresql.org/
+Vcs-Svn: svn://svn.debian.org/pkg-postgresql/trunk/pgpool2/
+Vcs-Browser: http://svn.debian.org/wsvn/pkg-postgresql/trunk/pgpool2/
+
+Package: pgpool2
+Architecture: any
+Depends: lsb-base (>= 3.0-3), postgresql-common (>= 26),
+ ${misc:Depends}, ${shlibs:Depends}
+Enhances: postgresql
+Conflicts: pgpool
+Replaces: pgpool
+Description: connection pool server and replication proxy for PostgreSQL
+ pgpool-II is a middleware that works between PostgreSQL servers and a
+ PostgreSQL database client. It provides the following features:
+ .
+  * Connection Pooling
+  * Replication
+  * Load Balance
+  * Limiting Exceeding Connections
+  * Parallel Query
+ .
+ pgpool-II talks PostgreSQL's backend and frontend protocol, and relays a
+ connection between them. Therefore, a database application (frontend) thinks
+ that pgpool-II is the actual PostgreSQL server, and the server (backend) sees
+ pgpool-II as one of its clients. Because pgpool-II is transparent to both the
+ server and the client, an existing database application can be used with
+ pgpool-II almost without a change to its sources.
+ .
+ This is version 3 of pgpool-II, the second generation of pgpool.
+
+Package: postgresql-PGVERSION-pgpool2
+Architecture: any
+Depends: postgresql-PGVERSION, ${misc:Depends}, ${shlibs:Depends}
+Description: connection pool server and replication proxy for PostgreSQL - modules
+ pgpool-II is a middleware that works between PostgreSQL servers and a
+ PostgreSQL database client.  This package contains support modules for
+ the PostgreSQL PGVERSION server:
+ .
+  * pgpool-recovery
+  * pgpool-regclass
+  * pgpool-walrecrunning
+

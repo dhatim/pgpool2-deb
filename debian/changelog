@@ -1,3 +1,11 @@
+pgpool2 (3.1-1) unstable; urgency=low
+
+  * New upstream release.
+  * Build pgpool-recovery pgpool-regclass pgpool-walrecrunning modules.
+    Closes: #630465.
+
+ -- Christoph Berg <myon@debian.org>  Tue, 04 Oct 2011 10:01:44 +0200
+
 pgpool2 (3.0.4-1) unstable; urgency=low
 
   * New upstream release

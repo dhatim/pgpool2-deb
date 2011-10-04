@@ -1,1 +1,2 @@
+sql-use-pg_config
 pgpool2-debian-config.patch

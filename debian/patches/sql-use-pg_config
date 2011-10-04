@@ -1,0 +1,55 @@
+--- a/sql/Makefile
++++ b/sql/Makefile
+@@ -29,7 +29,8 @@
+ top_builddir = ..
+ 
+ ifdef USE_PGXS
+-PGXS = $(shell pg_config --pgxs)
++PG_CONFIG = pg_config
++PGXS = $(shell $(PG_CONFIG) --pgxs)
+ include $(PGXS)
+ else
+ subdir = contrib
+@@ -42,4 +43,5 @@
+ 		pgpool-regclass	\
+ 		pgpool-walrecrunning
+ 
+-$(recurse)
++all clean install:
++	set -e ; for dir in $(SUBDIRS) ; do $(MAKE) -C $$dir $@ ; done
+--- a/sql/pgpool-recovery/Makefile
++++ b/sql/pgpool-recovery/Makefile
+@@ -11,7 +11,8 @@
+ top_builddir = ../..
+ 
+ ifdef USE_PGXS
+-PGXS = $(shell pg_config --pgxs)
++PG_CONFIG = pg_config
++PGXS = $(shell $(PG_CONFIG) --pgxs)
+ include $(PGXS)
+ else
+ subdir = contrib/pgpool-recovery
+--- a/sql/pgpool-regclass/Makefile
++++ b/sql/pgpool-regclass/Makefile
+@@ -11,7 +11,8 @@
+ top_builddir = ../..
+ 
+ ifdef USE_PGXS
+-PGXS = $(shell pg_config --pgxs)
++PG_CONFIG = pg_config
++PGXS = $(shell $(PG_CONFIG) --pgxs)
+ include $(PGXS)
+ else
+ subdir = contrib/pgpool-regclass
+--- a/sql/pgpool-walrecrunning/Makefile
++++ b/sql/pgpool-walrecrunning/Makefile
+@@ -11,7 +11,8 @@
+ top_builddir = ../..
+ 
+ ifdef USE_PGXS
+-PGXS = $(shell pg_config --pgxs)
++PG_CONFIG = pg_config
++PGXS = $(shell $(PG_CONFIG) --pgxs)
+ include $(PGXS)
+ else
+ subdir = contrib/pgpool-walrecrunning
