@@ -9,18 +9,28 @@ LDFLAGS += -Wl,--as-needed
 
 D=debian/pgpool2
 
+override_dh_auto_clean:
+	dh_auto_clean
+	$(MAKE) -C sql clean
+	$(MAKE) -C pgpool_adm clean USE_PGXS=1
+
 override_dh_auto_configure:
 	./configure --prefix=/usr --sysconfdir=/etc/pgpool2 --bindir=/usr/sbin --disable-rpath --libdir=/usr/lib/pgpool2
 
-override_dh_auto_build:
-	dh_auto_build
-	set -ex ; \
+override_dh_auto_install:
+	dh_auto_install --destdir=$(CURDIR)/debian/pgpool2
+	set -e ; \
 	for v in `pg_buildext supported-versions .` ; do \
 		echo "# $$v ##################################################################" ; \
 		PG_CONFIG=/usr/lib/postgresql/$$v/bin/pg_config ; \
 		$(MAKE) -C sql clean PG_CONFIG=$$PG_CONFIG ; \
 		$(MAKE) -C sql PG_CONFIG=$$PG_CONFIG ; \
 		$(MAKE) -C sql install DESTDIR=$(CURDIR)/debian/postgresql-$$v-pgpool2 PG_CONFIG=$$PG_CONFIG ; \
+		if [ -f $$($$PG_CONFIG --includedir-server)/foreign/foreign.h ] ; then \
+			$(MAKE) -C pgpool_adm clean USE_PGXS=1 PG_CONFIG=$$PG_CONFIG ; \
+			$(MAKE) -C pgpool_adm USE_PGXS=1 PG_CONFIG=$$PG_CONFIG CFLAGS="$(CFLAGS) -I../pcp" LDFLAGS="$(LDFLAGS) -L../pcp/.libs" ; \
+			$(MAKE) -C pgpool_adm install DESTDIR=$(CURDIR)/debian/postgresql-$$v-pgpool2 USE_PGXS=1 PG_CONFIG=$$PG_CONFIG ; \
+		fi \
 	done
 
 override_dh_install:
