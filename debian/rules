@@ -15,10 +15,11 @@ override_dh_auto_clean:
 	$(MAKE) -C pgpool_adm clean USE_PGXS=1
 
 override_dh_auto_configure:
-	./configure --prefix=/usr --sysconfdir=/etc/pgpool2 --bindir=/usr/sbin --disable-rpath --libdir=/usr/lib/pgpool2
+	./configure --prefix=/usr --sysconfdir=/etc/pgpool2 --bindir=/usr/sbin --disable-rpath
+	#--libdir=/usr/lib/pgpool2
 
 override_dh_auto_install:
-	dh_auto_install --destdir=$(CURDIR)/debian/pgpool2
+	dh_auto_install
 	set -e ; \
 	for v in `pg_buildext supported-versions .` ; do \
 		echo "# $$v ##################################################################" ; \
@@ -34,19 +35,8 @@ override_dh_auto_install:
 	done
 
 override_dh_install:
-	dh_install
-	rm -f $(addprefix $D/usr/lib/pgpool2/libpcp.,a la so)
-	rm -r $D/usr/include/
-	rm $D/usr/share/pgpool-II/pgpool.pam
-	mv $D/usr/share/pgpool-II $D/usr/share/pgpool2
-
-override_dh_installexamples:
-	dh_installexamples
-	mv $D/etc/pgpool2/pgpool.conf.sample   $D/etc/pgpool2/pgpool.conf
-	mv $D/etc/pgpool2/pcp.conf.sample      $D/etc/pgpool2/pcp.conf
-	mv $D/etc/pgpool2/pool_hba.conf.sample $D/etc/pgpool2/pool_hba.conf
-	mkdir -p $D/usr/share/doc/pgpool2/examples
-	mv $D/etc/pgpool2/*sample* $D/usr/share/doc/pgpool2/examples
+	set -e ; for f in pgpool.conf pcp.conf pool_hba.conf ; do mv debian/tmp/etc/pgpool2/$$f.sample debian/tmp/etc/pgpool2/$$f ; done
+	dh_install --list-missing
 
 %:
 	dh $@

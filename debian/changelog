@@ -4,6 +4,7 @@ pgpool2 (3.1-1) unstable; urgency=low
   * Build pgpool-recovery pgpool-regclass pgpool-walrecrunning server modules.
     Closes: #630465.
   * Build pgpool_adm server module.
+  * Split libpcp.so into a separate package.
 
  -- Christoph Berg <myon@debian.org>  Tue, 04 Oct 2011 10:01:44 +0200
 
