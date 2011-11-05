@@ -2,7 +2,7 @@ Source: pgpool2
 Section: database
 Priority: optional
 Maintainer: Christoph Berg <myon@debian.org>
-Build-Depends: debhelper (>= 7.0.50~), libpq-dev
+Build-Depends: debhelper (>= 7.0.50~), libpq-dev, postgresql-server-dev-all
 Standards-Version: 3.9.2
 Homepage: http://pgpool.projects.postgresql.org/
 Vcs-Svn: svn://svn.debian.org/pkg-postgresql/trunk/pgpool2/
@@ -44,59 +44,12 @@ Description: pgpool control protocol library
 
 Package: libpgpool-dev
 Architecture: any
+Section: libdevel
 Depends: ${misc:Depends}, ${shlibs:Depends}, libpgpool0 (= ${binary:Version})
 Description: pgpool control protocol library - headers
  pgpool-II is a middleware that works between PostgreSQL servers and a
  PostgreSQL database client.  This package contains headers for the pgpool
  control protocol library (libpcp).
-
-Package: postgresql-8.2-pgpool2
-Architecture: any
-Depends: postgresql-8.2, ${misc:Depends}, ${shlibs:Depends}, libpgpool0 (= ${binary:Version})
-Description: connection pool server and replication proxy for PostgreSQL - modules
- pgpool-II is a middleware that works between PostgreSQL servers and a
- PostgreSQL database client.  This package contains support modules for
- the PostgreSQL 8.2 server:
- .
-  * pgpool-recovery
-  * pgpool-regclass
-  * pgpool-walrecrunning (PostgreSQL 9.0 and later)
-
-Package: postgresql-8.3-pgpool2
-Architecture: any
-Depends: postgresql-8.3, ${misc:Depends}, ${shlibs:Depends}, libpgpool0 (= ${binary:Version})
-Description: connection pool server and replication proxy for PostgreSQL - modules
- pgpool-II is a middleware that works between PostgreSQL servers and a
- PostgreSQL database client.  This package contains support modules for
- the PostgreSQL 8.3 server:
- .
-  * pgpool-recovery
-  * pgpool-regclass
-  * pgpool-walrecrunning (PostgreSQL 9.0 and later)
-
-Package: postgresql-8.4-pgpool2
-Architecture: any
-Depends: postgresql-8.4, ${misc:Depends}, ${shlibs:Depends}, libpgpool0 (= ${binary:Version})
-Description: connection pool server and replication proxy for PostgreSQL - modules
- pgpool-II is a middleware that works between PostgreSQL servers and a
- PostgreSQL database client.  This package contains support modules for
- the PostgreSQL 8.4 server:
- .
-  * pgpool-recovery
-  * pgpool-regclass
-  * pgpool-walrecrunning (PostgreSQL 9.0 and later)
-
-Package: postgresql-9.0-pgpool2
-Architecture: any
-Depends: postgresql-9.0, ${misc:Depends}, ${shlibs:Depends}, libpgpool0 (= ${binary:Version})
-Description: connection pool server and replication proxy for PostgreSQL - modules
- pgpool-II is a middleware that works between PostgreSQL servers and a
- PostgreSQL database client.  This package contains support modules for
- the PostgreSQL 9.0 server:
- .
-  * pgpool-recovery
-  * pgpool-regclass
-  * pgpool-walrecrunning (PostgreSQL 9.0 and later)
 
 Package: postgresql-9.1-pgpool2
 Architecture: any

@@ -15,8 +15,11 @@ override_dh_auto_clean:
 	$(MAKE) -C pgpool_adm clean USE_PGXS=1
 
 override_dh_auto_configure:
-	./configure --prefix=/usr --sysconfdir=/etc/pgpool2 --bindir=/usr/sbin --disable-rpath
-	#--libdir=/usr/lib/pgpool2
+	./configure --prefix=/usr \
+		--sysconfdir=/etc/pgpool2 \
+		--bindir=/usr/sbin \
+		--libdir=/usr/lib/pgpool2 \
+		--includedir=/usr/include/pgpool2
 
 override_dh_auto_install:
 	dh_auto_install

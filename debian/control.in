@@ -2,7 +2,7 @@ Source: pgpool2
 Section: database
 Priority: optional
 Maintainer: Christoph Berg <myon@debian.org>
-Build-Depends: debhelper (>= 7.0.50~), libpq-dev
+Build-Depends: debhelper (>= 7.0.50~), libpq-dev, postgresql-server-dev-all
 Standards-Version: 3.9.2
 Homepage: http://pgpool.projects.postgresql.org/
 Vcs-Svn: svn://svn.debian.org/pkg-postgresql/trunk/pgpool2/
