@@ -1,6 +1,15 @@
-pgpool2 (3.1-1) unstable; urgency=low
+pgpool2 (3.1.1-1) unstable; urgency=low
 
-  * New upstream release.
+  * New upstream release.  Closes: #646116.
+    Change the lock method of insert_lock. The previous insert_lock uses row
+    locking against the sequence relation, but the current one uses row
+    locking against pgpool_catalog.insert_lock table. The reason is that
+    PostgreSQL core developers decided to disallow row locking against the
+    sequence relation to avoid an internal error which it leads. So creating
+    insert_lock table in all databases which are accessed via pgpool-II
+    beforehand is required. If does not exist insert_lock table, pgpool-II
+    locks the insert target table. This behavior is same as pgpool-II 2.2 and
+    2.3 series.
   * Build pgpool-recovery pgpool-regclass pgpool-walrecrunning server modules.
     Closes: #630465.
   * Build pgpool_adm server module.
@@ -14,7 +23,7 @@ pgpool2 (3.1-1) unstable; urgency=low
     several places, which was both unsupported by the current build system
     (despite the documentation claiming otherwise) and also pretty ugly.)
 
- -- Christoph Berg <myon@debian.org>  Tue, 04 Oct 2011 10:01:44 +0200
+ -- Christoph Berg <myon@debian.org>  Thu, 22 Dec 2011 18:40:04 +0100
 
 pgpool2 (3.0.4-1) unstable; urgency=low
 

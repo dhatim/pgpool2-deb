@@ -18,7 +18,8 @@ override_dh_auto_configure:
 	./configure --prefix=/usr \
 		--sysconfdir=/etc/pgpool2 \
 		--bindir=/usr/sbin \
-		--includedir=/usr/include/pgpool2
+		--includedir=/usr/include/pgpool2 \
+		--disable-rpath
 
 override_dh_auto_install:
 	dh_auto_install
