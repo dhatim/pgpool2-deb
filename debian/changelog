@@ -5,6 +5,14 @@ pgpool2 (3.1-1) unstable; urgency=low
     Closes: #630465.
   * Build pgpool_adm server module.
   * Split libpcp.so into a separate package.
+    There is already another libpcp in Debian, libpcp3/libpcp3-dev, therefore
+    we call our packages libpgpool0/libpgpool-dev. We have a file conflict
+    with /usr/lib/libpcp.{a,so}, so libpgpool-dev conflicts with libpcp3-dev.
+    As they are already at SONAME 3 while we are at 0, the other package will
+    not problems with our files in /usr/lib. (The alternative solution of
+    putting libpcp.so.* in /usr/lib/pgpool2 would require setting RPATH in
+    several places, which was both unsupported by the current build system
+    (despite the documentation claiming otherwise) and also pretty ugly.)
 
  -- Christoph Berg <myon@debian.org>  Tue, 04 Oct 2011 10:01:44 +0200
 

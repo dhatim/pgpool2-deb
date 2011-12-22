@@ -18,7 +18,6 @@ override_dh_auto_configure:
 	./configure --prefix=/usr \
 		--sysconfdir=/etc/pgpool2 \
 		--bindir=/usr/sbin \
-		--libdir=/usr/lib/pgpool2 \
 		--includedir=/usr/include/pgpool2
 
 override_dh_auto_install:

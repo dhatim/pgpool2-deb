@@ -4,7 +4,7 @@ Priority: optional
 Maintainer: Christoph Berg <myon@debian.org>
 Build-Depends: debhelper (>= 7.0.50~), libpq-dev, postgresql-server-dev-all
 Standards-Version: 3.9.2
-Homepage: http://pgpool.projects.postgresql.org/
+Homepage: http://www.pgpool.net/mediawiki/index.php/Main_Page
 Vcs-Svn: svn://svn.debian.org/pkg-postgresql/trunk/pgpool2/
 Vcs-Browser: http://svn.debian.org/wsvn/pkg-postgresql/trunk/pgpool2/
 
@@ -46,6 +46,8 @@ Package: libpgpool-dev
 Architecture: any
 Section: libdevel
 Depends: ${misc:Depends}, ${shlibs:Depends}, libpgpool0 (= ${binary:Version})
+# We also provide /usr/lib/libpcp.{a,so}
+Conflicts: libpcp3-dev
 Description: pgpool control protocol library - headers
  pgpool-II is a middleware that works between PostgreSQL servers and a
  PostgreSQL database client.  This package contains headers for the pgpool
