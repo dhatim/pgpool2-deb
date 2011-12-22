@@ -61,6 +61,7 @@ Description: connection pool server and replication proxy for PostgreSQL - modul
  PostgreSQL database client.  This package contains support modules for
  the PostgreSQL 9.1 server:
  .
+  * pgpool_adm
   * pgpool-recovery
   * pgpool-regclass
   * pgpool-walrecrunning (PostgreSQL 9.0 and later)
