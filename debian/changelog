@@ -1,3 +1,11 @@
+pgpool2 (3.1.1-2) unstable; urgency=low
+
+  * debian/control.in
+    - libpgpool0: set Breaks to solve "fails to upgrade from squeeze"
+      Thanks to Hideki Yamane for the patch.  Closes: #657418.
+
+ -- Christoph Berg <myon@debian.org>  Sat, 28 Jan 2012 20:04:00 +0100
+
 pgpool2 (3.1.1-1) unstable; urgency=low
 
   * New upstream release.  Closes: #646116.
