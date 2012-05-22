@@ -38,7 +38,10 @@ override_dh_auto_install:
 	done
 
 override_dh_install:
-	set -e ; for f in pgpool.conf pcp.conf pool_hba.conf ; do mv debian/tmp/etc/pgpool2/$$f.sample debian/tmp/etc/pgpool2/$$f ; done
+	# pgpool.conf is handled by ucf
+	mkdir -p debian/tmp/usr/share/pgpool2
+	mv debian/tmp/etc/pgpool2/pgpool.conf.sample debian/tmp/usr/share/pgpool2/pgpool.conf
+	set -e ; for f in pcp.conf pool_hba.conf ; do mv debian/tmp/etc/pgpool2/$$f.sample debian/tmp/etc/pgpool2/$$f ; done
 	dh_install --list-missing
 
 %:

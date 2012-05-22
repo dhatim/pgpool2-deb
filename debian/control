@@ -10,7 +10,7 @@ Vcs-Browser: http://svn.debian.org/wsvn/pkg-postgresql/trunk/pgpool2/
 
 Package: pgpool2
 Architecture: any
-Depends: lsb-base (>= 3.0-3), postgresql-common (>= 26),
+Depends: lsb-base (>= 3.0-3), postgresql-common (>= 26), ucf,
  ${misc:Depends}, ${shlibs:Depends}, libpgpool0 (= ${binary:Version})
 Enhances: postgresql
 Conflicts: pgpool

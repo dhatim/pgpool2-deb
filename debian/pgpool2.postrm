@@ -1,0 +1,18 @@
+#!/bin/sh
+
+set -e
+
+case $1 in
+    purge)
+	if which ucf >/dev/null; then
+	    ucf --purge /etc/pgpool2/pgpool.conf
+	fi
+	if which ucfr >/dev/null; then
+	    ucfr --purge pgpool2 /etc/pgpool2/pgpool.conf
+	fi
+	;;
+esac
+
+#DEBHELPER#
+
+exit 0
