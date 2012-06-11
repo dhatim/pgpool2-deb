@@ -10,6 +10,7 @@ case $1 in
 	if which ucfr >/dev/null; then
 	    ucfr --purge pgpool2 /etc/pgpool2/pgpool.conf
 	fi
+	rm -f /etc/pgpool2/pgpool.conf /etc/pgpool2/pgpool.conf.ucf-dist
 	;;
 esac
 

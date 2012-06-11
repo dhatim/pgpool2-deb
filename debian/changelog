@@ -1,3 +1,10 @@
+pgpool2 (3.1.3-3) unstable; urgency=low
+
+  * Remove /etc/pgpool2/pgpool.conf on purge, ucf doesn't do that by itself.
+    Closes: #674238.
+
+ -- Christoph Berg <myon@debian.org>  Mon, 11 Jun 2012 18:05:32 +0200
+
 pgpool2 (3.1.3-2) unstable; urgency=low
 
   * Use ucf to handle /etc/pgpool2/pgpool.conf.  Closes: #671359.
