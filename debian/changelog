@@ -1,11 +1,11 @@
-pgpool2 (3.2.0-1) UNRELEASED-experimental; urgency=low
+pgpool2 (3.2.0-1) experimental; urgency=low
 
   * New upstream release.
   * When installing a new config file, use group postgres/640.
   * Bump debhelper compat level to 9.
   * Add 9.2 to supported versions.
 
- -- Christoph Berg <myon@debian.org>  Thu, 11 Oct 2012 23:31:00 +0200
+ -- Christoph Berg <myon@debian.org>  Fri, 12 Oct 2012 00:26:18 +0200
 
 pgpool2 (3.1.3-3) unstable; urgency=low
 
