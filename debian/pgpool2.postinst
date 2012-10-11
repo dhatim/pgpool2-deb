@@ -45,11 +45,17 @@ case "$1" in
 	else
 	    LPORT=`perl -e 'use lib "/usr/share/postgresql-common";use PgCommon;printf "%s\n", next_free_port;'`
 	fi
-	CONFIG=`mktemp --tmpdir pgpool2.conf.XXXXXX`
-	sed -e "s/^port\s*=\s*[0-9]*/port = $LPORT/" /usr/share/pgpool2/pgpool.conf > $CONFIG
-	ucf $CONFIG /etc/pgpool2/pgpool.conf
-	ucfr pgpool2 /etc/pgpool2/pgpool.conf
-	rm -f $CONFIG
+	TMPCONFIG=`mktemp --tmpdir pgpool2.conf.XXXXXX`
+	CONFIG=/etc/pgpool2/pgpool.conf
+	sed -e "s/^port\s*=\s*[0-9]*/port = $LPORT/" /usr/share/pgpool2/pgpool.conf > $TMPCONFIG
+	[ -e $CONFIG ] || new_conf=yes
+	ucf $TMPCONFIG $CONFIG
+	ucfr pgpool2 $CONFIG
+	if [ "$new_conf" ] ; then
+		chgrp postgres $CONFIG
+		chmod 640 $CONFIG
+	fi
+	rm -f $TMPCONFIG
     ;;
 
     abort-upgrade|abort-remove|abort-deconfigure)
