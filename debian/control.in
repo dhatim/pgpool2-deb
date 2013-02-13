@@ -36,6 +36,7 @@ Description: connection pool server and replication proxy for PostgreSQL
 
 Package: libpgpool0
 Architecture: any
+Section: libs
 Depends: ${misc:Depends}, ${shlibs:Depends}
 Breaks: pgpool2 (<< 3.1.1)
 Description: pgpool control protocol library
