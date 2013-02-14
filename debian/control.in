@@ -2,7 +2,9 @@ Source: pgpool2
 Section: database
 Priority: optional
 Maintainer: Christoph Berg <myon@debian.org>
-Build-Depends: debhelper (>= 9), libpq-dev, postgresql-server-dev-all
+Build-Depends: debhelper (>= 9), libpq-dev, postgresql-server-dev-all,
+# test/parser:
+ ruby
 Standards-Version: 3.9.3
 Homepage: http://www.pgpool.net/mediawiki/index.php/Main_Page
 Vcs-Git: git://anonscm.debian.org/pkg-postgresql/pgpool2.git

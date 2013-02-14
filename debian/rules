@@ -13,6 +13,9 @@ override_dh_auto_clean:
 	dh_auto_clean
 	$(MAKE) -C sql clean
 	$(MAKE) -C pgpool_adm clean USE_PGXS=1
+	rm -f test/jdbc/*.class
+	$(MAKE) -C test/parser clean
+	rm -rf test/parser/result
 
 override_dh_auto_configure:
 	./configure --prefix=/usr \
@@ -20,6 +23,10 @@ override_dh_auto_configure:
 		--bindir=/usr/sbin \
 		--includedir=/usr/include/pgpool2 \
 		--disable-rpath
+
+override_dh_auto_test:
+	dh_auto_test
+	make -C test/parser test
 
 override_dh_auto_install:
 	dh_auto_install

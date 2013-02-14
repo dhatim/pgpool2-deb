@@ -2,7 +2,9 @@ Source: pgpool2
 Section: database
 Priority: optional
 Maintainer: Christoph Berg <myon@debian.org>
-Build-Depends: debhelper (>= 9), libpq-dev, postgresql-server-dev-all
+Build-Depends: debhelper (>= 9), libpq-dev, postgresql-server-dev-all,
+# test/parser:
+ ruby
 Standards-Version: 3.9.3
 Homepage: http://www.pgpool.net/mediawiki/index.php/Main_Page
 Vcs-Git: git://anonscm.debian.org/pkg-postgresql/pgpool2.git
@@ -36,6 +38,7 @@ Description: connection pool server and replication proxy for PostgreSQL
 
 Package: libpgpool0
 Architecture: any
+Section: libs
 Depends: ${misc:Depends}, ${shlibs:Depends}
 Breaks: pgpool2 (<< 3.1.1)
 Description: pgpool control protocol library
