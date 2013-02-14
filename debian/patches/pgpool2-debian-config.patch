@@ -22,7 +22,7 @@
                                     # Unix domain socket path for pcp
                                     # The Debian package defaults to
                                     # /var/run/postgresql
-@@ -176,10 +176,10 @@
+@@ -180,10 +180,10 @@
  # FILE LOCATIONS
  #------------------------------------------------------------------------------
  
@@ -37,7 +37,7 @@
  
 --- a/pool.h
 +++ b/pool.h
-@@ -60,10 +60,10 @@
+@@ -61,13 +61,13 @@
  #define HBA_CONF_FILE_NAME "pool_hba.conf"
  
  /* pid file directory */
@@ -49,7 +49,11 @@
 +#define DEFAULT_SOCKET_DIR "/var/run/postgresql"
  
  /* pid file name */
- #define DEFAULT_PID_FILE_NAME "/var/run/pgpool/pgpool.pid"
+-#define DEFAULT_PID_FILE_NAME "/var/run/pgpool/pgpool.pid"
++#define DEFAULT_PID_FILE_NAME "/var/run/postgresql/pgpool.pid"
+ 
+ /* status file name */
+ #define STATUS_FILE_NAME "pgpool_status"
 --- a/pgpool.conf.sample-master-slave
 +++ b/pgpool.conf.sample-master-slave
 @@ -28,10 +28,10 @@
@@ -74,7 +78,7 @@
                                     # Unix domain socket path for pcp
                                     # The Debian package defaults to
                                     # /var/run/postgresql
-@@ -176,10 +176,10 @@
+@@ -180,10 +180,10 @@
  # FILE LOCATIONS
  #------------------------------------------------------------------------------
  
@@ -111,7 +115,7 @@
                                     # Unix domain socket path for pcp
                                     # The Debian package defaults to
                                     # /var/run/postgresql
-@@ -176,10 +176,10 @@
+@@ -180,10 +180,10 @@
  # FILE LOCATIONS
  #------------------------------------------------------------------------------
  
@@ -148,7 +152,7 @@
                                     # Unix domain socket path for pcp
                                     # The Debian package defaults to
                                     # /var/run/postgresql
-@@ -176,10 +176,10 @@
+@@ -180,10 +180,10 @@
  # FILE LOCATIONS
  #------------------------------------------------------------------------------
  
