@@ -12,6 +12,7 @@ D=debian/pgpool2
 override_dh_auto_clean:
 	dh_auto_clean
 	$(MAKE) -C sql clean
+	rm -f config.log lex.yy.c
 	$(MAKE) -C pgpool_adm clean USE_PGXS=1
 	rm -rf test/jdbc/*.class test/jdbc/result test/jdbc/pgpool.properties
 	$(MAKE) -C test/parser clean
