@@ -15,7 +15,9 @@ override_dh_auto_clean:
 	$(MAKE) -C pgpool_adm clean USE_PGXS=1
 	rm -rf test/jdbc/*.class test/jdbc/result test/jdbc/pgpool.properties
 	$(MAKE) -C test/parser clean
-	rm -rf test/parser/result
+	rm -rf test/parser/result test/parser/test.diff
+	$(MAKE) -C test/timestamp clean
+	rm -rf test/timestamp/result test/timestamp/test.diff
 
 override_dh_auto_configure:
 	./configure --prefix=/usr \
@@ -28,7 +30,9 @@ override_dh_auto_configure:
 
 override_dh_auto_test:
 	dh_auto_test
-	make -C test/parser test
+	$(MAKE) -C test/parser test
+	chmod +x test/timestamp/run-test
+	$(MAKE) -C test/timestamp test
 	# test/jdbc is executed by autopkgtest
 
 override_dh_auto_install:
