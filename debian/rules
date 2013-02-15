@@ -13,7 +13,7 @@ override_dh_auto_clean:
 	dh_auto_clean
 	$(MAKE) -C sql clean
 	$(MAKE) -C pgpool_adm clean USE_PGXS=1
-	rm -f test/jdbc/*.class test/jdbc/pgpool.properties
+	rm -rf test/jdbc/*.class test/jdbc/result test/jdbc/pgpool.properties
 	$(MAKE) -C test/parser clean
 	rm -rf test/parser/result
 
@@ -23,10 +23,13 @@ override_dh_auto_configure:
 		--bindir=/usr/sbin \
 		--includedir=/usr/include/pgpool2 \
 		--disable-rpath
+	# create directory here so we can unlink it in case autopkgtest leaves files owned by root behind
+	mkdir -p test/jdbc/result
 
 override_dh_auto_test:
 	dh_auto_test
 	make -C test/parser test
+	# test/jdbc is executed by autopkgtest
 
 override_dh_auto_install:
 	dh_auto_install
