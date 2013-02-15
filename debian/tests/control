@@ -1,0 +1,3 @@
+Depends: @, postgresql, default-jdk, libpostgresql-jdbc-java
+Restrictions: needs-root
+Tests: jdbc-tests

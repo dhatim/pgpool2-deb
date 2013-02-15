@@ -13,7 +13,7 @@ override_dh_auto_clean:
 	dh_auto_clean
 	$(MAKE) -C sql clean
 	$(MAKE) -C pgpool_adm clean USE_PGXS=1
-	rm -f test/jdbc/*.class
+	rm -f test/jdbc/*.class test/jdbc/pgpool.properties
 	$(MAKE) -C test/parser clean
 	rm -rf test/parser/result
 

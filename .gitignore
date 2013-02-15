@@ -3,7 +3,7 @@ AUTHORS
 ChangeLog
 config*
 COPYING
-debian/*/
+debian/*pgpool*/
 debian/*.debhelper
 debian/*.debhelper.log
 debian/files
@@ -25,6 +25,7 @@ mkinstalldirs
 NEWS
 *.o
 parser/
+.pc/
 pcp/
 pcp.conf.sample
 pg_md5

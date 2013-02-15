@@ -1,0 +1,43 @@
+#!/bin/sh
+
+set -e
+
+if [ -z "$PGVIRTUAL" ]; then
+	/etc/init.d/pgpool2 stop
+	PGVIRTUAL=1 exec pg_virtualenv "$0" "$@"
+fi
+
+cleanup () {
+	set +e
+	test -f pgpool.properties.orig && mv pgpool.properties.orig pgpool.properties
+	/etc/init.d/pgpool2 stop
+	sed -i -e '/#ADT#/,$d' /etc/pgpool2/pgpool.conf
+}
+
+trap cleanup 0 2 3 15
+
+cd test/jdbc
+
+cat >> /etc/pgpool2/pgpool.conf <<EOF
+#ADT#
+backend_hostname0 = '$PGHOST'
+pool_passwd = ''
+EOF
+
+test -f pgpool.properties.orig && mv pgpool.properties.orig pgpool.properties
+cp pgpool.properties pgpool.properties.orig
+cat > pgpool.properties <<EOF
+pgpooltest.host=$PGHOST
+pgpooltest.port=5433
+pgpooltest.user=$PGUSER
+pgpooltest.password=$PGPASSWORD
+pgpooltest.dbname=postgres
+pgpooltest.options=
+pgpooltest.tests=autocommit batch column lock select update insert
+EOF
+
+/etc/init.d/pgpool2 start
+psql -f prepare.sql 2>&1
+CLASSPATH=/usr/share/java/postgresql.jar:. ./run.sh
+
+mv pgpool.properties.orig pgpool.properties

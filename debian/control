@@ -9,6 +9,7 @@ Standards-Version: 3.9.3
 Homepage: http://www.pgpool.net/mediawiki/index.php/Main_Page
 Vcs-Git: git://anonscm.debian.org/pkg-postgresql/pgpool2.git
 Vcs-Browser: http://anonscm.debian.org/gitweb/?p=pkg-postgresql/pgpool2.git
+XS-Testsuite: autopkgtest
 
 Package: pgpool2
 Architecture: any
