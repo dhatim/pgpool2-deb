@@ -23,6 +23,7 @@ cat >> /etc/pgpool2/pgpool.conf <<EOF
 #ADT#
 port = $PGPORT
 backend_hostname0 = '$PGHOST'
+backend_port0 = 5432
 pool_passwd = ''
 EOF
 tail -n4 /etc/pgpool2/pgpool.conf
