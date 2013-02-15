@@ -1,4 +1,4 @@
-pgpool2 (3.2.2-2) UNRELEASED; urgency=low
+pgpool2 (3.2.2-2) experimental; urgency=low
 
   * Build-Depend on bison, flex, and ruby and run tests in test/parser and
     test/timestamp.
@@ -7,7 +7,7 @@ pgpool2 (3.2.2-2) UNRELEASED; urgency=low
   * postinst: Fix permissions of /etc/pgpool2/pgpool.conf if it isn't readable
     for postgres.
 
- -- Christoph Berg <myon@debian.org>  Thu, 14 Feb 2013 09:30:32 +0100
+ -- Christoph Berg <myon@debian.org>  Fri, 15 Feb 2013 16:06:22 +0100
 
 pgpool2 (3.2.2-1) experimental; urgency=low
 
