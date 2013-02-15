@@ -1,6 +1,7 @@
 pgpool2 (3.2.2-2) UNRELEASED; urgency=low
 
-  * Build-Depend on ruby and run tests in test/parser and test/timestamp.
+  * Build-Depend on flex and ruby and run tests in test/parser and
+    test/timestamp.
   * Add autopkgtest support; run tests in test/jdbc.
   * pool.h: Point DEFAULT_PID_FILE_NAME at /var/run/postgresql/.
   * postinst: Fix permissions of /etc/pgpool2/pgpool.conf if it isn't readable
