@@ -17,16 +17,20 @@ trap cleanup 0 2 3 15
 
 cd test/jdbc
 
+export PGPORT=9999
+
 cat >> /etc/pgpool2/pgpool.conf <<EOF
 #ADT#
-port = 9999
+port = $PGPORT
 backend_hostname0 = '$PGHOST'
 pool_passwd = ''
 EOF
+tail -n4 /etc/pgpool2/pgpool.conf
+echo
 
 cat > pgpool.properties <<EOF
 pgpooltest.host=$PGHOST
-pgpooltest.port=9999
+pgpooltest.port=$PGPORT
 pgpooltest.user=$PGUSER
 pgpooltest.password=$PGPASSWORD
 pgpooltest.dbname=postgres
@@ -34,7 +38,12 @@ pgpooltest.options=
 pgpooltest.tests=autocommit batch column lock select update insert
 EOF
 # no need to restore this file, we just unlink it in debian/rules
+cat pgpool.properties
+echo
 
 /etc/init.d/pgpool2 start
-psql -f prepare.sql 2>&1
+psql -p $PGPORT -f prepare.sql 2>&1
+echo
+
 CLASSPATH=/usr/share/java/postgresql.jar:. ./run.sh
+echo
