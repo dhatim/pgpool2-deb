@@ -19,13 +19,14 @@ cd test/jdbc
 
 cat >> /etc/pgpool2/pgpool.conf <<EOF
 #ADT#
+port = 9999
 backend_hostname0 = '$PGHOST'
 pool_passwd = ''
 EOF
 
 cat > pgpool.properties <<EOF
 pgpooltest.host=$PGHOST
-pgpooltest.port=5433
+pgpooltest.port=9999
 pgpooltest.user=$PGUSER
 pgpooltest.password=$PGPASSWORD
 pgpooltest.dbname=postgres
