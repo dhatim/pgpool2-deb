@@ -1,3 +1,9 @@
+pgpool2 (3.2.2-3) UNRELEASED; urgency=low
+
+  * debian/tests/control: Depend on | libpg-java for squeeze compatibility.
+
+ -- Christoph Berg <myon@debian.org>  Tue, 19 Feb 2013 14:18:51 +0100
+
 pgpool2 (3.2.2-2) experimental; urgency=low
 
   * Build-Depend on bison, flex, and ruby and run tests in test/parser and
