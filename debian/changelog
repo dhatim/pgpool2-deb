@@ -1,3 +1,9 @@
+pgpool2 (3.2.2-4) experimental; urgency=low
+
+  * Remove "| libpg-java" again.  Blame: #693540.
+
+ -- Christoph Berg <myon@debian.org>  Wed, 10 Apr 2013 11:29:20 +0200
+
 pgpool2 (3.2.2-3) experimental; urgency=low
 
   * Create /var/run/postgresql on startup when missing.  Closes: #703696.

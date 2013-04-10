@@ -1,3 +1,4 @@
-Depends: @, postgresql, default-jdk, libpostgresql-jdbc-java | libpg-java
+Depends: @, postgresql, default-jdk, libpostgresql-jdbc-java
+# Squeeze needs "| libpg-java", but adt doesn't like "|" there
 Restrictions: needs-root
 Tests: jdbc-tests
