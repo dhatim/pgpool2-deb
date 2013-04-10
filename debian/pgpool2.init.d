@@ -38,6 +38,10 @@ is_running() {
 
 
 d_start() {
+	if ! test -d /var/run/postgresql; then
+		install -d -m 2775 -o postgres -g postgres /var/run/postgresql
+	fi
+
 	if is_running; then
 		:
 	else
