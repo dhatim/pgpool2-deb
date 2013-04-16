@@ -1,3 +1,9 @@
+pgpool2 (3.2.3-1) experimental; urgency=low
+
+  * New upstream release.
+
+ -- Christoph Berg <myon@debian.org>  Tue, 16 Apr 2013 11:19:55 +0200
+
 pgpool2 (3.2.2-4) experimental; urgency=low
 
   * Remove "| libpg-java" again.  Blame: #693540.
