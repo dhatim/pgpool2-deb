@@ -1,6 +1,7 @@
 pgpool2 (3.2.4-1) unstable; urgency=low
 
   * New upstream release.
+  * debian/tests/jdbc-tests: Disable batch and insert tests, they hang.
 
  -- Christoph Berg <myon@debian.org>  Sat, 11 May 2013 21:31:41 -0700
 

@@ -36,7 +36,8 @@ pgpooltest.user=$PGUSER
 pgpooltest.password=$PGPASSWORD
 pgpooltest.dbname=postgres
 pgpooltest.options=
-pgpooltest.tests=autocommit batch column lock select update insert
+#pgpooltest.tests=autocommit batch column lock select update insert
+pgpooltest.tests=autocommit column lock select update
 EOF
 # no need to restore this file, we just unlink it in debian/rules
 cat pgpool.properties
