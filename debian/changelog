@@ -1,3 +1,9 @@
+pgpool2 (3.2.4-1) unstable; urgency=low
+
+  * New upstream release.
+
+ -- Christoph Berg <myon@debian.org>  Sat, 11 May 2013 21:31:41 -0700
+
 pgpool2 (3.2.3-1) experimental; urgency=low
 
   * New upstream release.
