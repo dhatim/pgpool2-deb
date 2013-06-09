@@ -1,7 +1,11 @@
 pgpool2 (3.2.4-2) UNRELEASED; urgency=low
 
+  [ Martin Pitt ]
   * debian/tests/jdbc-tests: Fix $ADTTMP permissions to make tests work when
     running under adt-run.
+
+  [ Christoph Berg ]
+  * pgpool2.postinst: Only use first port number found in pgpool2.conf.
 
  -- Martin Pitt <mpitt@debian.org>  Tue, 04 Jun 2013 15:06:11 +0200
 

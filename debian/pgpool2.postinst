@@ -41,7 +41,7 @@ case "$1" in
         fi
 	# pgpool.conf is handled by ucf (but still move it in from the old location in the "if" above)
 	if [ -f "/etc/pgpool2/pgpool.conf" ]; then
-	    LPORT=`perl -lne 'print $1 if /^port\s*=\s*(\d+)/' /etc/pgpool2/pgpool.conf`
+	    LPORT=`perl -lne 'if (/^port\s*=\s*(\d+)/) { print $1; exit; }' /etc/pgpool2/pgpool.conf`
 	else
 	    LPORT=`perl -e 'use lib "/usr/share/postgresql-common";use PgCommon;printf "%s\n", next_free_port;'`
 	fi
