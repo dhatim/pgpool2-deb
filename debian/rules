@@ -25,7 +25,9 @@ override_dh_auto_configure:
 		--sysconfdir=/etc/pgpool2 \
 		--bindir=/usr/sbin \
 		--includedir=/usr/include/pgpool2 \
-		--disable-rpath
+		--disable-rpath \
+		--with-openssl \
+		--with-pam
 	# create directory here so we can unlink it in case autopkgtest leaves files owned by root behind
 	mkdir -p test/jdbc/result
 
