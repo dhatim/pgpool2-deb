@@ -1,4 +1,4 @@
-pgpool2 (3.2.4-2) UNRELEASED; urgency=low
+pgpool2 (3.2.4-2) unstable; urgency=low
 
   [ Martin Pitt ]
   * debian/tests/jdbc-tests: Fix $ADTTMP permissions to make tests work when
@@ -8,7 +8,7 @@ pgpool2 (3.2.4-2) UNRELEASED; urgency=low
   * Enable OpenSSL and PAM support.
   * pgpool2.postinst: Only use first port number found in pgpool2.conf.
 
- -- Martin Pitt <mpitt@debian.org>  Tue, 04 Jun 2013 15:06:11 +0200
+ -- Christoph Berg <myon@debian.org>  Tue, 11 Jun 2013 13:21:11 +0200
 
 pgpool2 (3.2.4-1) unstable; urgency=low
 
