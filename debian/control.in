@@ -3,6 +3,7 @@ Section: database
 Priority: optional
 Maintainer: Christoph Berg <myon@debian.org>
 Build-Depends: debhelper (>= 9), libpq-dev, postgresql-server-dev-all,
+ libpam0g-dev, libssl-dev,
 # test/parser:
  bison, flex, ruby
 Standards-Version: 3.9.4
