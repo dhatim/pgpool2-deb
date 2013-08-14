@@ -1,3 +1,12 @@
+pgpool2 (3.3.0-1) unstable; urgency=low
+
+  * New upstream release. (Closes: #710558: Exceptions on COMMIT cause
+    abnormal pgpool process termination and disconnects)
+  * sql/pgpool-walrecrunning is gone, remove patch for it.
+  * Fix two -Werror=format-security errors in watchdog/wd_packet.c.
+
+ -- Christoph Berg <myon@debian.org>  Wed, 14 Aug 2013 08:47:45 +0200
+
 pgpool2 (3.2.4-2) unstable; urgency=low
 
   [ Martin Pitt ]
