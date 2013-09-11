@@ -19,6 +19,7 @@ override_dh_auto_clean:
 	rm -rf test/parser/result test/parser/test.diff
 	$(MAKE) -C test/timestamp clean
 	rm -rf test/timestamp/result test/timestamp/test.diff
+	rm -rf debian/postgresql-*-pgpool2/ debian/*.substvars
 
 override_dh_auto_configure:
 	./configure --prefix=/usr \
@@ -27,7 +28,8 @@ override_dh_auto_configure:
 		--includedir=/usr/include/pgpool2 \
 		--disable-rpath \
 		--with-openssl \
-		--with-pam
+		--with-pam \
+		--with-memcached=/usr/include/libmemcached
 	# create directory here so we can unlink it in case autopkgtest leaves files owned by root behind
 	mkdir -p test/jdbc/result
 
