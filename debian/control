@@ -68,7 +68,6 @@ Description: connection pool server and replication proxy for PostgreSQL - modul
  the PostgreSQL 9.3 server:
  .
   * pgpool_adm
-  * pgpool-recovery
-  * pgpool-regclass
-  * pgpool-walrecrunning (PostgreSQL 9.0 and later)
+  * pgpool_recovery (PostgreSQL 9.1 and above)
+  * pgpool_regclass (PostgreSQL 9.1 and above)
 

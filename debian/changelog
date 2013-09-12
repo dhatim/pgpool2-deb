@@ -4,6 +4,7 @@ pgpool2 (3.3.1-1) unstable; urgency=low
   * Enable memcached support.  Closes: #721216.
   * Use "all" in debian/pgversions and B-D on pg-server-dev-all >= 148.
   * Prepend includedir-server to CFLAGS when building pgpool_adm.
+  * walrecrunning is gone, remove it from description.
 
  -- Christoph Berg <myon@debian.org>  Thu, 12 Sep 2013 11:48:29 +0200
 
