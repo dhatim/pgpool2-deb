@@ -3,8 +3,9 @@ pgpool2 (3.3.1-1) unstable; urgency=low
   * New upstream release.
   * Enable memcached support.  Closes: #721216.
   * Use "all" in debian/pgversions and B-D on pg-server-dev-all >= 148.
+  * Prepend includedir-server to CFLAGS when building pgpool_adm.
 
- -- Christoph Berg <myon@debian.org>  Wed, 11 Sep 2013 17:09:19 +0200
+ -- Christoph Berg <myon@debian.org>  Thu, 12 Sep 2013 11:48:29 +0200
 
 pgpool2 (3.3.0-1) unstable; urgency=low
 

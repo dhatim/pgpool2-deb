@@ -51,7 +51,7 @@ override_dh_auto_install:
 		$(MAKE) -C sql install DESTDIR=$(CURDIR)/debian/postgresql-$$v-pgpool2 PG_CONFIG=$$PG_CONFIG ; \
 		if [ -f $$($$PG_CONFIG --includedir-server)/foreign/foreign.h ] ; then \
 			$(MAKE) -C pgpool_adm clean USE_PGXS=1 PG_CONFIG=$$PG_CONFIG ; \
-			$(MAKE) -C pgpool_adm USE_PGXS=1 PG_CONFIG=$$PG_CONFIG CFLAGS="$(CFLAGS) -I../pcp" LDFLAGS="$(LDFLAGS) -L../pcp/.libs" ; \
+			$(MAKE) -C pgpool_adm USE_PGXS=1 PG_CONFIG=$$PG_CONFIG CFLAGS="-I$$($$PG_CONFIG --includedir-server) $(CFLAGS) -I../pcp" ; \
 			$(MAKE) -C pgpool_adm install DESTDIR=$(CURDIR)/debian/postgresql-$$v-pgpool2 USE_PGXS=1 PG_CONFIG=$$PG_CONFIG ; \
 		fi \
 	done
