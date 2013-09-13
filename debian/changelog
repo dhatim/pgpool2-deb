@@ -2,6 +2,7 @@ pgpool2 (3.3.1-2) UNRELEASED; urgency=low
 
   * postinst: Do not die if pgpool2.conf was removed by the user (ucf will
     preserve this).
+  * debian/tests/jdbc-tests: Reenable batch and insert tests.
 
  -- Christoph Berg <myon@debian.org>  Fri, 13 Sep 2013 15:20:15 +0200
 
