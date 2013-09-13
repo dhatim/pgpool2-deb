@@ -50,7 +50,7 @@ case "$1" in
 	sed -e "s/^port\s*=\s*[0-9]*/port = $LPORT/" /usr/share/pgpool2/pgpool.conf > $TMPCONFIG
 	ucf $TMPCONFIG $CONFIG
 	ucfr pgpool2 $CONFIG
-	if ! su -c "test -r $CONFIG" postgres ; then # make file readable for postgres
+	if test -e $CONFIG && ! su -c "test -r $CONFIG" postgres ; then # make file readable for postgres
 		chgrp postgres $CONFIG
 		chmod 640 $CONFIG
 	fi
