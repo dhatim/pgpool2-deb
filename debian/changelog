@@ -1,10 +1,11 @@
-pgpool2 (3.3.1-2) UNRELEASED; urgency=low
+pgpool2 (3.3.2-1) unstable; urgency=low
 
+  * New upstream release.
   * postinst: Do not die if pgpool2.conf was removed by the user (ucf will
     preserve this).
   * debian/tests/jdbc-tests: Reenable batch and insert tests.
 
- -- Christoph Berg <myon@debian.org>  Fri, 13 Sep 2013 15:20:15 +0200
+ -- Christoph Berg <christoph.berg@credativ.de>  Thu, 06 Feb 2014 16:18:08 +0100
 
 pgpool2 (3.3.1-1) unstable; urgency=low
 
