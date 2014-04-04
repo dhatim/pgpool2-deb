@@ -1,3 +1,10 @@
+pgpool2 (3.3.3-1) UNRELEASED; urgency=medium
+
+  * New upstream release.
+  * Use dh-autoreconf.  Closes: #732928.
+
+ -- Christoph Berg <myon@debian.org>  Fri, 04 Apr 2014 10:10:25 +0200
+
 pgpool2 (3.3.2-1) unstable; urgency=low
 
   * New upstream release.
