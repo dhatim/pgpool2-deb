@@ -19,6 +19,7 @@ override_dh_auto_clean:
 	rm -rf test/parser/result test/parser/test.diff
 	$(MAKE) -C test/timestamp clean
 	rm -rf test/timestamp/result test/timestamp/test.diff
+	cd test/regression && bash clean.sh
 	rm -rf debian/postgresql-*-pgpool2/ debian/*.substvars
 
 override_dh_auto_configure:
