@@ -3,6 +3,7 @@ pgpool2 (3.3.3-1) UNRELEASED; urgency=medium
   * New upstream release.
   * Use dh-autoreconf.  Closes: #732928.
   * Add some fixes to run test/regression/ tests (WIP).
+  * Fix test/timestamp tests, thanks Julian Schauder.
 
  -- Christoph Berg <myon@debian.org>  Fri, 04 Apr 2014 10:10:25 +0200
 
