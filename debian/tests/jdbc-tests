@@ -49,7 +49,7 @@ EOF
 cat pgpool.properties
 echo
 
-/etc/init.d/pgpool2 start
+_SYSTEMCTL_SKIP_REDIRECT=1 /etc/init.d/pgpool2 start
 psql -p $PGPORT -f prepare.sql 2>&1
 echo
 

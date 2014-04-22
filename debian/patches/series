@@ -1,3 +1,4 @@
 pgpool2-debian-config.patch
 test-fixes
 test-timestamps
+test-jdbc-fix

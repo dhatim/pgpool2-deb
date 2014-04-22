@@ -1,0 +1,10 @@
+--- a/test/jdbc/BatchTest2.java
++++ b/test/jdbc/BatchTest2.java
+@@ -33,7 +33,6 @@ public class BatchTest2 extends PgpoolTe
+ 				}
+             } finally {
+                 if(stmt != null) stmt.close();
+-                if(stmt2 != null) stmt2.close();
+             }
+         } finally {
+             connection.close();

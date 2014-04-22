@@ -4,8 +4,9 @@ pgpool2 (3.3.3-1) UNRELEASED; urgency=medium
   * Use dh-autoreconf.  Closes: #732928.
   * Add some fixes to run test/regression/ tests (WIP).
   * Fix test/timestamp tests, thanks Julian Schauder.
+  * Fix test/jdbc/BatchTest2.java.
 
- -- Christoph Berg <myon@debian.org>  Fri, 04 Apr 2014 10:10:25 +0200
+ -- Christoph Berg <christoph.berg@credativ.de>  Tue, 22 Apr 2014 15:27:15 +0200
 
 pgpool2 (3.3.2-1) unstable; urgency=low
 
