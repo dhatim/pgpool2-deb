@@ -53,5 +53,6 @@ _SYSTEMCTL_SKIP_REDIRECT=1 /etc/init.d/pgpool2 start
 psql -p $PGPORT -f prepare.sql 2>&1
 echo
 
+export LANG=en_US.UTF-8 # Hoge.java has utf-8 comments
 CLASSPATH=/usr/share/java/postgresql.jar:. ./run.sh
 echo
