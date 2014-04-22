@@ -1,4 +1,4 @@
-pgpool2 (3.3.3-1) UNRELEASED; urgency=medium
+pgpool2 (3.3.3-1) unstable; urgency=medium
 
   * New upstream release.
   * Use dh-autoreconf.  Closes: #732928.
@@ -6,7 +6,7 @@ pgpool2 (3.3.3-1) UNRELEASED; urgency=medium
   * Fix test/timestamp tests, thanks Julian Schauder.
   * Fix test/jdbc/BatchTest2.java.
 
- -- Christoph Berg <christoph.berg@credativ.de>  Tue, 22 Apr 2014 15:27:15 +0200
+ -- Christoph Berg <christoph.berg@credativ.de>  Tue, 22 Apr 2014 16:02:05 +0200
 
 pgpool2 (3.3.2-1) unstable; urgency=low
 
