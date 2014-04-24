@@ -1,7 +1,8 @@
 Source: pgpool2
 Section: database
 Priority: optional
-Maintainer: Christoph Berg <myon@debian.org>
+Maintainer: Debian PostgreSQL Maintainers <pkg-postgresql-public@lists.alioth.debian.org>
+Uploaders: Christoph Berg <myon@debian.org>
 Build-Depends: debhelper (>= 9), libpq-dev, postgresql-server-dev-all (>= 148~),
  libpam0g-dev, libssl-dev, libmemcached-dev, dh-autoreconf,
 # test/parser:

@@ -1,5 +1,6 @@
 pgpool2 (3.3.3-2) unstable; urgency=medium
 
+  * Set team as maintainer.
   * debian/tests/jdbc-tests: Generate missing locale.
 
  -- Christoph Berg <christoph.berg@credativ.de>  Thu, 24 Apr 2014 14:19:27 +0200
