@@ -13,10 +13,14 @@ if [ -z "$PGVIRTUAL" ]; then
 	PGVIRTUAL=1 exec pg_virtualenv "$0" "$@"
 fi
 
-# Generate locale needed on Debian
-if test -f /etc/locale.gen && ! grep -q '^en_US.UTF-8 UTF-8$' /etc/locale.gen; then
-	echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen
-	locale-gen
+# Generate locale needed
+if test -f /etc/locale.gen; then # Debian
+	if ! grep -q '^en_US.UTF-8 UTF-8$' /etc/locale.gen; then
+		echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen
+		locale-gen
+	fi
+else # Ubuntu
+	locale-gen en_US.UTF-8
 fi
 
 cleanup () {
