@@ -1,0 +1,11 @@
+#!/bin/sh
+
+# FIXME: This should actually test some functions, but unfortunately
+# test/regression/ is utterly complex
+
+set -ex
+
+for v in $(pg_buildext supported-versions); do
+	pg_virtualenv -v $v \
+		psql -v ON_ERROR_STOP=1 -f debian/tests/installcheck.sql
+done
