@@ -14,14 +14,8 @@ if [ -z "$PGVIRTUAL" ]; then
 fi
 
 # Generate locale needed
-if test -f /etc/locale.gen; then # Debian
-	if ! grep -q '^en_US.UTF-8 UTF-8$' /etc/locale.gen; then
-		echo "en_US.UTF-8 UTF-8" >> /etc/locale.gen
-		locale-gen
-	fi
-else # Ubuntu
-	locale-gen en_US.UTF-8
-fi
+. /usr/share/postgresql-common/pgcommon.sh
+locale_gen en_US.UTF-8 UTF-8
 
 cleanup () {
 	set +e

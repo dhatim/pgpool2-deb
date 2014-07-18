@@ -1,5 +1,6 @@
-Depends: @, postgresql, default-jdk, libpostgresql-jdbc-java
-# Squeeze needs "| libpg-java", but adt doesn't like "|" there
+# pgcommon.sh introduced in pg-common 159
+# Squeeze needs "| libpg-java"
+Depends: @, postgresql-common (>= 159~), postgresql, default-jdk, libpostgresql-jdbc-java | libpg-java
 Restrictions: needs-root
 Tests: jdbc-tests
 
