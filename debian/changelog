@@ -1,9 +1,10 @@
-pgpool2 (3.3.3-3) UNRELEASED; urgency=medium
+pgpool2 (3.3.3-3) unstable; urgency=medium
 
   * debian/tests/jdbc-tests: Depend postgresql-common >= 159 for locale_gen.
+  * Build 9.4 extension.
   * Add installcheck test with CREATE EXTENSION.
 
- -- Christoph Berg <myon@debian.org>  Tue, 15 Jul 2014 12:03:29 +0300
+ -- Christoph Berg <myon@debian.org>  Sun, 27 Jul 2014 11:29:49 +0200
 
 pgpool2 (3.3.3-2) unstable; urgency=medium
 

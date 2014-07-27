@@ -72,15 +72,3 @@ Description: connection pool server and replication proxy for PostgreSQL - modul
   * pgpool_recovery (PostgreSQL 9.1 and above)
   * pgpool_regclass (PostgreSQL 9.1 and above)
 
-Package: postgresql-9.3-pgpool2
-Architecture: any
-Depends: postgresql-9.3, ${misc:Depends}, ${shlibs:Depends}, libpgpool0 (= ${binary:Version})
-Description: connection pool server and replication proxy for PostgreSQL - modules
- pgpool-II is a middleware that works between PostgreSQL servers and a
- PostgreSQL database client.  This package contains support modules for
- the PostgreSQL 9.3 server:
- .
-  * pgpool_adm
-  * pgpool_recovery (PostgreSQL 9.1 and above)
-  * pgpool_regclass (PostgreSQL 9.1 and above)
-
