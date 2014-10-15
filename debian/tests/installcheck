@@ -6,6 +6,12 @@
 set -ex
 
 for v in $(pg_buildext supported-versions); do
+	case $v in
+		8*|9.0)
+			echo "No extensions on $v"
+			continue
+			;;
+	esac
 	pg_virtualenv -v $v \
 		psql -v ON_ERROR_STOP=1 -f debian/tests/installcheck.sql
 done

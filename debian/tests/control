@@ -4,6 +4,6 @@ Depends: @, postgresql-common (>= 159~), postgresql, default-jdk, libpostgresql-
 Restrictions: needs-root
 Tests: jdbc-tests
 
-Depends: @
+Depends: @, postgresql-common (>= 159~)
 Restrictions: allow-stderr
 Tests: installcheck
