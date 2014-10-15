@@ -1,6 +1,7 @@
 pgpool2 (3.3.4-1) unstable; urgency=medium
 
   * New upstream release.
+  * Remove test patches that no longer apply.
   * Add systemd service file, initial patch by Michael Stapelberg, thanks!
     Closes: #756453.
 
