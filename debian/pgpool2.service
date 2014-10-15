@@ -1,0 +1,14 @@
+[Unit]
+Description=pgpool-II
+Documentation=man:pgpool(8)
+Wants=postgresql.service
+
+[Service]
+User=postgres
+ExecStart=/usr/sbin/pgpool -n
+ExecReload=/bin/kill -HUP $MAINPID
+StandardOutput=syslog
+SyslogFacility=local0
+
+[Install]
+WantedBy=multi-user.target

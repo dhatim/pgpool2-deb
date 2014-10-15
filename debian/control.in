@@ -5,6 +5,7 @@ Maintainer: Debian PostgreSQL Maintainers <pkg-postgresql-public@lists.alioth.de
 Uploaders: Christoph Berg <myon@debian.org>
 Build-Depends: debhelper (>= 9), libpq-dev, postgresql-server-dev-all (>= 148~),
  libpam0g-dev, libssl-dev, libmemcached-dev, dh-autoreconf,
+ dh-systemd (>= 1.19),
 # test/parser:
  bison, flex, ruby
 Standards-Version: 3.9.5

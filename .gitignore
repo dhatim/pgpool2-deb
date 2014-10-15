@@ -30,7 +30,7 @@ parser/
 pcp/
 pcp.conf.sample
 pg_md5
-pgpool*
+/pgpool*
 pool_config.l
 pool_hba.conf.sample
 README*

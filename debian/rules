@@ -65,4 +65,9 @@ override_dh_install:
 	dh_install --list-missing
 
 %:
+# use dh_systemd_* only on recent dists that have dh-systemd (>= 1.19)
+ifneq ($(wildcard /usr/bin/dh_systemd_start),)
+	dh $@ --with autoreconf,systemd
+else
 	dh $@ --with autoreconf
+endif

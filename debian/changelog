@@ -1,3 +1,11 @@
+pgpool2 (3.3.4-1) unstable; urgency=medium
+
+  * New upstream release.
+  * Add systemd service file, initial patch by Michael Stapelberg, thanks!
+    Closes: #756453.
+
+ -- Christoph Berg <myon@debian.org>  Wed, 15 Oct 2014 21:36:17 +0200
+
 pgpool2 (3.3.3-3) unstable; urgency=medium
 
   * debian/tests/jdbc-tests: Depend postgresql-common >= 159 for locale_gen.
