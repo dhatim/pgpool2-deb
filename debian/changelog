@@ -1,3 +1,9 @@
+pgpool2 (3.4.0-1) UNRELEASED-experimental; urgency=medium
+
+  * New upstream release.
+
+ -- Christoph Berg <myon@debian.org>  Thu, 04 Dec 2014 17:40:25 +0100
+
 pgpool2 (3.3.4-1) unstable; urgency=medium
 
   * New upstream release.

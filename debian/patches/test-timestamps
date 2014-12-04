@@ -3,9 +3,9 @@ Fix segfault on uninitialized msg member
 ... and actually exit if the test fails
 
 Julian Schauder
---- a/test/timestamp/main.c
-+++ b/test/timestamp/main.c
-@@ -89,6 +89,8 @@
+--- a/src/test/timestamp/main.c
++++ b/src/test/timestamp/main.c
+@@ -87,6 +87,8 @@ main(int argc, char **argv)
  	POOL_CONNECTION_POOL	backend;
  	POOL_CONNECTION_POOL_SLOT slot;
  	POOL_SENT_MESSAGE	msg;
@@ -14,9 +14,9 @@ Julian Schauder
  	backend.slots[0] = &slot;
  	slot.sp = &sp;
  
---- a/test/timestamp/run-test
-+++ b/test/timestamp/run-test
-@@ -58,9 +58,11 @@
+--- a/src/test/timestamp/run-test
++++ b/src/test/timestamp/run-test
+@@ -58,9 +58,11 @@ begin
          print "OK\n"
        else
          print "FAILED\n"
@@ -28,9 +28,9 @@ Julian Schauder
      end
    end
  
---- a/test/parser/run-test
-+++ b/test/parser/run-test
-@@ -51,9 +51,11 @@
+--- a/src/test/parser/run-test
++++ b/src/test/parser/run-test
+@@ -51,9 +51,11 @@ begin
          print "OK\n"
        else
          print "FAILED\n"
