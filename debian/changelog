@@ -1,3 +1,9 @@
+pgpool2 (3.4.4-git.1.c0ed0aa-1) dhatim; urgency=medium
+
+  * buid from V3_4_STABLE to include http://git.postgresql.org/gitweb/?p=pgpool2.git;a=commit;h=c0ed0aac08631786116169c4ffac7fe19f3667b0 -- fix for http://www.pgpool.net/mantisbt/view.php?id=152
+
+ -- Dhatim <contact@dhatim.net>  Wed, 21 Oct 2015 11:59:27 +0200
+
 pgpool2 (3.4.0-1) UNRELEASED-experimental; urgency=medium
 
   * New upstream release.
