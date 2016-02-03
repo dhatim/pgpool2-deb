@@ -11,19 +11,19 @@ D=debian/pgpool2
 
 # We don't really need to clean, since we'll build from a clean state
 # anyway
-
-override_dh_auto_clean:
-	# dh_auto_clean
-	$(MAKE) -C src/sql clean
-	rm -f config.log lex.yy.c
-	$(MAKE) -C src/sql/pgpool_adm clean USE_PGXS=1
-	rm -rf src/test/jdbc/*.class src/test/jdbc/result src/test/jdbc/pgpool.properties
-	$(MAKE) -C src/test/parser clean
-	rm -rf src/test/parser/result src/test/parser/test.diff
-	# $(MAKE) -C test/timestamp clean
-	# rm -rf test/timestamp/result test/timestamp/test.diff
-	cd src/test/regression && bash clean.sh
-	rm -rf debian/postgresql-*-pgpool2/ debian/*.substvars
+#
+#override_dh_auto_clean:
+#	# dh_auto_clean
+#	$(MAKE) -C src/sql clean
+#	rm -f config.log lex.yy.c
+#	$(MAKE) -C src/sql/pgpool_adm clean USE_PGXS=1
+#	rm -rf src/test/jdbc/*.class src/test/jdbc/result src/test/jdbc/pgpool.properties
+#	$(MAKE) -C src/test/parser clean
+#	rm -rf src/test/parser/result src/test/parser/test.diff
+#	# $(MAKE) -C test/timestamp clean
+#	# rm -rf test/timestamp/result test/timestamp/test.diff
+#	cd src/test/regression && bash clean.sh
+#	rm -rf debian/postgresql-*-pgpool2/ debian/*.substvars
 
 override_dh_auto_configure:
 	./configure --prefix=/usr \
