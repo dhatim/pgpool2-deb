@@ -1,3 +1,9 @@
+pgpool2 (3.5.2-dhatim-1) dhatim; urgency=medium
+
+  * New upstream release.
+
+ -- Dhatim <contact@dhatim.net>  Tue, 04 May 2016 18:44:00 +0100
+
 pgpool2 (3.5.1-dhatim-1) dhatim; urgency=medium
 
   * New upstream release.
