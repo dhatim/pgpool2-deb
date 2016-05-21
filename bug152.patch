@@ -2,7 +2,6 @@ index 3126db3..cf259d5 100644
 --- src/protocol/pool_proto_modules.c
 +++ src/protocol/pool_proto_modules.c.new
 @@ -1322,13 +1322,13 @@ POOL_STATUS Describe(POOL_CONNECTION *frontend, POOL_CONNECTION_POOL *backend,
-@@ -1322,13 +1322,13 @@ POOL_STATUS Describe(POOL_CONNECTION *frontend, POOL_CONNECTION_POOL *backend,
      ereport(DEBUG1,
              (errmsg("Describe: waiting for master completing the query")));
  
