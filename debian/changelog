@@ -1,3 +1,9 @@
+pgpool2 (3.5.2-dhatim-3) dhatim; urgency=medium
+
+  * Include new patch for bug 152.
+
+ -- Dhatim <contact@dhatim.net>  Sat, 21 May 2016 13:44:00 +0100
+
 pgpool2 (3.5.2-dhatim-2) dhatim; urgency=medium
 
   * Include patch for bug 152.
