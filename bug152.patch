@@ -1,6 +1,7 @@
-index 3126db3..35a9dac 100644
+index 3126db3..cf259d5 100644
 --- src/protocol/pool_proto_modules.c
 +++ src/protocol/pool_proto_modules.c.new
+@@ -1322,13 +1322,13 @@ POOL_STATUS Describe(POOL_CONNECTION *frontend, POOL_CONNECTION_POOL *backend,
 @@ -1322,13 +1322,13 @@ POOL_STATUS Describe(POOL_CONNECTION *frontend, POOL_CONNECTION_POOL *backend,
      ereport(DEBUG1,
              (errmsg("Describe: waiting for master completing the query")));
@@ -17,3 +18,12 @@ index 3126db3..35a9dac 100644
  		pool_unset_query_in_progress();
  
  	return POOL_CONTINUE;
+@@ -1396,7 +1396,7 @@ POOL_STATUS Close(POOL_CONNECTION *frontend, POOL_CONNECTION_POOL *backend,
+ 
+ 	pool_set_query_in_progress();
+ 
+-	if (REPLICATION)
++	if (!STREAM)
+ 	{
+ 		pool_extended_send_and_wait(query_context, "C", len, contents, 1, MASTER_NODE_ID, false);
+ 		pool_extended_send_and_wait(query_context, "C", len, contents, -1, MASTER_NODE_ID, false);
