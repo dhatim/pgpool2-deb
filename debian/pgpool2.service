@@ -1,6 +1,5 @@
 [Unit]
 Description=pgpool-II
-Documentation=man:pgpool(8)
 Wants=postgresql.service
 
 [Service]
