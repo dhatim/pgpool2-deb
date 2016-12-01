@@ -4,7 +4,6 @@ etc/pgpool2/pgpool.conf.sample-master-slave	usr/share/doc/pgpool2/examples
 etc/pgpool2/pgpool.conf.sample-replication	usr/share/doc/pgpool2/examples
 etc/pgpool2/pgpool.conf.sample-stream		usr/share/doc/pgpool2/examples
 usr/sbin
-usr/share/man
 usr/share/pgpool2/pgpool.conf
 usr/share/pgpool-II/*.sql			usr/share/pgpool2
 usr/share/pgpool-II/pgpool.pam			usr/share/doc/pgpool2/examples
